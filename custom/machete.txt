@@ -1,0 +1,216 @@
+Migrations
+    php artisan make:migration create_barrios_table
+    php artisan make:migration create_calificaciones_table
+    php artisan make:migration create_calles_table
+    php artisan make:migration create_carreras_table
+    php artisan make:migration create_componentesDeFormularios_table
+    php artisan make:migration create_condiciones_table
+    php artisan make:migration create_coortes_table
+    php artisan make:migration create_cuadras_table
+    php artisan make:migration create_divisiones_table
+    php artisan make:migration create_entradas_table
+    php artisan make:migration create_fichas_table
+    php artisan make:migration create_generos_table
+    php artisan make:migration create_materias_table
+    php artisan make:migration create_paises_table
+    php artisan make:migration create_tiposDeCorrelativas_table
+    php artisan make:migration create_tiposDeCursos_table
+    php artisan make:migration create_tiposDeDirecciones_table
+    php artisan make:migration create_tiposDeDocumentos_table
+    php artisan make:migration create_tiposDeImagenes_table
+    php artisan make:migration create_tiposDeInscripciones_table
+    php artisan make:migration create_tiposDeNotas_table
+    php artisan make:migration create_tiposDeResponsables_table
+    php artisan make:migration create_turnos_table
+    php artisan make:migration create_alumnos_table
+    php artisan make:migration create_cursos_table
+    php artisan make:migration create_cajasCurriculares_table
+    php artisan make:migration create_profesores_table
+    php artisan make:migration create_cajasCurriculares_profesores_table
+                        php artisan make:migration create_inscripciones_table
+                        php artisan make:migration create_carreras_inscripciones_table
+    php artisan make:migration create_provincias_table
+    php artisan make:migration create_departamentos_table
+    php artisan make:migration create_municipios_table
+    php artisan make:migration create_direcciones_table
+    php artisan make:migration create_contactos_table
+    php artisan make:migration create_instituciones_table
+    php artisan make:migration create_directivos_table
+    php artisan make:migration create_carreras_instituciones_table
+                        php artisan make:migration create_correlativas_table
+    php artisan make:migration create_documentos_table
+            php artisan make:migration create_formularios_table
+    (ELIMINADO) php artisan make:migration create_fichas_formularios_table
+    php artisan make:migration create_horarios_table
+    php artisan make:migration create_personas_table
+    php artisan make:migration create_imagenes_table
+                        php artisan make:migration create_librosMatrices_table
+    php artisan make:migration create_materias_inscripciones_table
+    php artisan make:migration create_notas_table
+    php artisan make:migration create_materias_notas_table
+    php artisan make:migration create_preceptores_table
+    php artisan make:migration create_preceptores_cursos_table
+    php artisan make:migration create_responsables_table
+
+
+Seeders
+    php artisan make:seeder UserSeeder
+    php artisan make:seeder BarrioSeeder
+    php artisan make:seeder CalificacionSeeder
+    php artisan make:seeder CalleSeeder
+    php artisan make:seeder CarreraSeeder
+    php artisan make:seeder ComponenteDeFormularioSeeder
+    php artisan make:seeder CondicionSeeder
+    php artisan make:seeder CoorteSeeder
+    php artisan make:seeder CuadraSeeder
+    php artisan make:seeder DivisionSeeder
+    php artisan make:seeder EntradaSeeder
+    php artisan make:seeder FichaSeeder
+    php artisan make:seeder GeneroSeeder
+    php artisan make:seeder MateriaSeeder
+    php artisan make:seeder PaisSeeder
+    php artisan make:seeder TipoDeCorrelativaSeeder
+    php artisan make:seeder TipoDeCursoSeeder
+    php artisan make:seeder TipoDeDireccionSeeder
+    php artisan make:seeder TipoDeDocumentoSeeder
+    php artisan make:seeder TipoDeImagenSeeder
+    php artisan make:seeder TipoDeInscripcionSeeder
+    php artisan make:seeder TipoDeNotaSeeder
+    php artisan make:seeder TipoDeResponsableSeeder
+    php artisan make:seeder TurnoSeeder
+    php artisan make:seeder AlumnoSeeder
+    php artisan make:seeder CursoSeeder
+    php artisan make:seeder CajaCurricularSeeder
+    php artisan make:seeder ProfesorSeeder
+    php artisan make:seeder CajaCurricularProfesorSeeder
+    php artisan make:seeder InscripcionSeeder
+    php artisan make:seeder CarreraInscripcionSeeder
+    php artisan make:seeder ProvinciaSeeder
+    php artisan make:seeder DepartamentoSeeder
+    php artisan make:seeder MunicipioSeeder
+    php artisan make:seeder DireccionSeeder
+    php artisan make:seeder ContactoSeeder
+    php artisan make:seeder InstitucionSeeder
+    php artisan make:seeder DirectivoSeeder
+    php artisan make:seeder CarreraInstitucionSeeder
+    php artisan make:seeder CorrelativaSeeder
+    php artisan make:seeder DocumentoSeeder
+    php artisan make:seeder FormularioSeeder
+    php artisan make:seeder HorarioSeeder
+    php artisan make:seeder PersonaSeeder
+    php artisan make:seeder ImagenSeeder
+    php artisan make:seeder LibroMatrizSeeder
+    php artisan make:seeder MateriaInscripcionSeeder
+    php artisan make:seeder NotaSeeder
+    php artisan make:seeder MateriaNotaSeeder
+    php artisan make:seeder PreceptorSeeder
+    php artisan make:seeder PreceptorCursoSeeder
+    php artisan make:seeder ResponsableSeeder
+    ---
+    php artisan make:seeder RoleSeeder
+    php artisan make:seeder PermissionSeeder
+    php artisan make:seeder RoleHasPermissionSeeder
+    php artisan make:seeder ModelHasRoleSeeder
+
+
+Controllers con Resources
+    php artisan make:controller AdministracionController
+    php artisan make:controller UserController
+
+Models y Controllers con Resources
+    php artisan make:model -c -r Barrio
+    php artisan make:model -c -r Calificacion
+    php artisan make:model -c -r Calle
+    php artisan make:model -c -r Carrera
+    php artisan make:model -c -r ComponenteDeFormulario
+    php artisan make:model -c -r Condicion
+    php artisan make:model -c -r Coorte
+    php artisan make:model -c -r Cuadra
+    php artisan make:model -c -r Division
+    php artisan make:model -c -r Entrada
+    php artisan make:model -c -r Ficha
+    php artisan make:model -c -r Genero
+    php artisan make:model -c -r Materia
+    php artisan make:model -c -r Pais
+    php artisan make:model -c -r TipoDeCorrelativa
+    php artisan make:model -c -r TipoDeCurso
+    php artisan make:model -c -r TipoDeDireccion
+    php artisan make:model -c -r TipoDeDocumento
+    php artisan make:model -c -r TipoDeImagen
+    php artisan make:model -c -r TipoDeInscripcion
+    php artisan make:model -c -r TipoDeNota
+    php artisan make:model -c -r TipoDeResponsable
+    php artisan make:model -c -r Turno
+    php artisan make:model -c -r Alumno
+    php artisan make:model -c -r Curso
+    php artisan make:model -c -r CajaCurricular
+    php artisan make:model -c -r Profesor
+    php artisan make:model -c -r CajaCurricularProfesor
+    php artisan make:model -c -r Inscripcion
+    php artisan make:model -c -r CarreraInscripcion
+    php artisan make:model -c -r Provincia
+    php artisan make:model -c -r Departamento
+    php artisan make:model -c -r Municipio
+    php artisan make:model -c -r Direccion
+    php artisan make:model -c -r Institucion
+    php artisan make:model -c -r Directivo
+    php artisan make:model -c -r CarreraInstitucion
+    php artisan make:model -c -r Contacto
+    php artisan make:model -c -r Correlativa
+    php artisan make:model -c -r Documento
+    php artisan make:model -c -r Formulario
+    php artisan make:model -c -r Horario
+    php artisan make:model -c -r Persona
+    php artisan make:model -c -r Imagen
+    php artisan make:model -c -r LibroMatriz
+    php artisan make:model -c -r MateriaInscripcion
+    php artisan make:model -c -r Nota
+    php artisan make:model -c -r MateriaNota
+    php artisan make:model -c -r Preceptor
+    php artisan make:model -c -r PreceptorCurso
+    php artisan make:model -c -r Responsable
+    php artisan make:model -c -r Administracion
+    php artisan make:model -c -r Permiso
+    php artisan make:model -c -r Rol
+
+
+Factories
+    php artisan make:factory AlumnoFactory --model=Alumno
+    php artisan make:factory ProfesorFactory --model=Profesor
+    php artisan make:factory DireccionFactory --model=Direccion
+    php artisan make:factory ContactoFactory --model=Contacto
+    php artisan make:factory DirectivoFactory --model=Directivo
+    php artisan make:factory DocumentoFactory --model=Documento
+    php artisan make:factory HorarioFactory --model=Horario
+    php artisan make:factory PersonaFactory --model=Persona
+    php artisan make:factory ImagenFactory --model=Imagen
+
+
+
+
+
+
+Instalar datatables y agregarlo al proyecto en resources/js/boostrap.js y resources/sass/app-scss
+
+npm install --save jszip
+npm install --save pdfmake
+npm install --save datatables.net-bs4
+npm install --save datatables.net-buttons-bs4
+npm install --save datatables.net-colreorder-bs4
+npm install --save datatables.net-keytable-bs4
+npm install --save datatables.net-responsive-bs4
+npm install --save datatables.net-select-bs4
+
+
+Para generar mensajes
+    composer require laracasts/flash
+
+
+
+Instalar Sweet Alert 2
+npm install sweetalert2 --save
+
+Instalar Full Calendar
+npm install --save @fullcalendar/core @fullcalendar/daygrid
+
+

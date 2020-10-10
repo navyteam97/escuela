@@ -1,0 +1,39 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&family=Niconne&display=swap');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+// Adminlte
+@import '~admin-lte/dist/css/adminlte.css';
+
+//SweetAlert2
+
+
+// FontAwesome
+$fa-font-path:        "../webfonts";
+
+@import "~@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "~@fortawesome/fontawesome-free/scss/solid.scss";
+@import "~@fortawesome/fontawesome-free/scss/brands.scss";
+
+// Datatable
+//@import "~datatables.net-dt/css/jquery.dataTables.css";
+
+//@import "~datatables.net-bs4/css/dataTables.bootstrap4.min.css";
+//@import "~datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css";
+        //@import "~datatables.net-keytable-bs4/css/keyTable.bootstrap4.min.css";
+        //@import "~datatables.net-colreorder-bs4/css/colReorder.bootstrap4.min.css";
+//@import "~datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css";
+        //@import "~datatables.net-searchbuilder-bs4/css/searchBuilder.bootstrap4.min.css";
+//@import "~datatables.net-searchpanes-bs4/css/searchPanes.bootstrap4.min.css";
+//@import "~datatables.net-select-bs4/css/select.bootstrap4.min.css";
+
+
+
+//Full calendar
+/* @import "~@fullcalendar/core/main.css";
+@import "~@fullcalendar/daygrid/main.css"; */

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Prueba de Axios</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body>
+
+<style>
+  #loading {
+    display: none;
+  }
+</style>
+
+<div class="alert alert-primary" role="alert" id="loading">Espere porfavor...</div>
+<button class="btn btn-danger" id="carga_ajax">Carga contenido</button> 
+<button class="btn btn-success" id="json_get">Request JSON GET</button> 
+<button class="btn btn-info" id="json_get2">Request JSON GET 2</button> 
+<button class="btn btn-warning" id="json_post">Request JSON POST</button>
+<br><h1>titulo</h1>
+<br><div id="mensaje"></div>
+<br><h1>id del usuario</h1>
+<br><div id='mensajeid'></div>
+
+
+	
+
+
+
+<script>
+var loading = document.getElementById('loading');
+var mensaje = document.getElementById('mensaje');
+var mensajeid=document.getElementById('mensajeid');
+
+
+var boton = document.getElementById('json_get');
+boton.addEventListener('click', function(){
+	loading.style.display='block';
+	axios.get('http://verde.test/profesor/buscar_cursos', {
+			responseType: 'json'
+	})
+	.then(function(res){
+		if(res.status==200){
+			console.log(res.data);
+			mensaje.innerHTML=res.data.custom[0].name;
+			//mensajeid.innerHTML=res.data.id;
+		}
+		console.log(res);
+	})
+	.catch(function(err){
+		console.log(err);
+	})
+	.then(function(){
+		loading.style.display='none';
+	});
+});
+
+var boton = document.getElementById('json_get2');
+boton.addEventListener('click', function(){
+	loading.style.display='block';
+	axios.get('https://jsonplaceholder.typicode.com/todos/2', {
+			responseType: 'json'
+	})
+	.then(function(res){
+		if(res.status==200){
+			console.log(res.data);
+			mensaje.innerHTML=res.data.title;
+			mensajeid.innerHTML=res.data.id;
+		}
+		console.log(res);
+	})
+	.catch(function(err){
+		console.log(err);
+	})
+	.then(function(){
+		loading.style.display='none';
+	});
+});
+
+
+</script>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</body>
+</html>

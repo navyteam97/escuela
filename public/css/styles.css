@@ -1,0 +1,60 @@
+/* html,
+body {
+    background-image: url("../images/escuela2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0;
+} */
+
+.fondo-01 {
+    background-image: url("../images/escuela2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0;
+}
+
+.fondo-02 {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0;
+}
+
+.efecto-difuminacion {
+    background-color: rgba(211, 124, 204, 0.3);
+    border-radius: 5px;
+    text-align: center;
+    line-height: 1;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* .links > a {
+    color: black;
+    padding: 0 13px;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.m-b-md {
+    margin-bottom: 30px;
+} */
+
+.niconne {
+    font-family: "Niconne", cursive;
+}
+
+.merryweather {
+    font-family: 'Merriweather', serif;
+}
+
+.texto-nav {
+    font-size: 25px;
+}
