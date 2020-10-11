@@ -22,15 +22,20 @@
         </a>
 
         <div class="dropdown-menu dropdown-menu-right bg-dark text-white" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item text-dark" href="#">
+                <i class="fas fa-user-alt"></i>
+                Mi Perfil
+            </a>
+            <a class="dropdown-item text-dark" href="{{route('administracion.index')}}">
+                <i class="fas fa-users-cog"></i>
+                Administracion
+            </a>
             <a class="dropdown-item text-dark" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                 <i class="fas fa-sign-out-alt"></i>
-                Salir
+                Desconectar
             </a>
-            <a class="dropdown-item text-dark" href="#">
-                <i class="fas fa-user-alt"></i>
-                Perfil
-            </a>
+            
 
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                 @csrf
