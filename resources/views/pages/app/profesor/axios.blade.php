@@ -8,7 +8,6 @@
     display: none;
   }
 </style>
-<div class="alert alert-primary" role="alert" id="loading">Espere porfavor...</div>
 <div class="container">
 <form>
     <div class="row">
@@ -17,7 +16,9 @@
                       <label>Turnos</label>
                       <select  id="select-turnos" name="select-turnos" class="form-control select2 select2-hidden-accessible" style="width: 100%;" data-select2-id="1" tabindex="-1" aria-hidden="true">
                            <option value="" selected="selected" data-select2-id="3">Seleccione...</option>
-                        <option value="" data-select2-id="30"></option>
+                          @foreach($turnos as $turno)
+                            <option value="{{ $turno->id  }}" data-select2-id="30">{{ $turno->name  }}</option>
+                          @endforeach
 
                       </select>
             </div>
@@ -33,14 +34,14 @@
                       </select>
             </div>
         </div>
-        <div class="col">
-          <div class="form-group">
-          		<button id="" class="btn btn-primary">filtro</button>
-            </div>
-        </div>
     </div>
 </form>
 <hr>
+       <div class="form-group">
+         		<button id="" class="btn btn-primary">filtro</button>
+        </div>
+
+<div class="alert alert-primary" role="alert" id="loading">Espere porfavor...</div>
 
   <div class="row">
 
@@ -60,11 +61,10 @@
       </div>
     </div>
    
-    <div id="destino"> </div>
 
     <div class="col md-4" id="">
       <div class="card" style="width: 20rem;">
-        <img src="{{asset('img/math.jpg')}}" class="card-img-top" alt="..." style="height: 18rem">
+        <img src="{{asset('images/math.jpg')}}" class="card-img-top" alt="..." style="height: 18rem">
         <div class="card-body">
           <h4 class="card-title"><b id="curso"></b></h4>
           <p class="card-text" id="materia"></p>
@@ -108,7 +108,7 @@ boton.addEventListener('click', function(){
 	})
 	.then(function(res){
 		if(res.status==200){
-			console.log(res.data);
+			//console.log(res.data);
       //this.datos=res.data;
 			curso.innerHTML=res.data.datos[0].name;
 			materia.innerHTML=res.data.datos[0].materia;
