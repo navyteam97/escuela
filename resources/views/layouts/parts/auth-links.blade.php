@@ -30,6 +30,10 @@
                 <i class="fas fa-users-cog"></i>
                 Administracion
             </a>
+            <a class="dropdown-item text-dark" href="{{route('profesor.index')}}">
+                <i class="fas fa-chalkboard-teacher"></i>
+                Aulas 
+            </a>
             <a class="dropdown-item text-dark" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                 <i class="fas fa-sign-out-alt"></i>
