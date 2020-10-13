@@ -1,7 +1,4 @@
 Route::get('profesor/index', 'ProfesorController@index')->name('profesor.index');
 Route::get('profesor/axios', 'ProfesorController@axios')->name('profesor.axios');
 Route::get('profesor/buscar_cursos', 'ProfesorController@buscar_cursos')->name('profesor.buscar_cursos');
-Route::get('profesor/aula', 'ProfesorController@aula')->name('profesor.aula');
-
-
-dasdasdas
+Route::get('profesor/aula', 'ProfesorController@aula')->name('profesor.aula')
