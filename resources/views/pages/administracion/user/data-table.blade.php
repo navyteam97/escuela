@@ -29,11 +29,7 @@
                             </form>
                         </td>
                         <td>
-                            <form action="{{ route('user.destroy', $item->id) }}" method="post">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-sm btn-danger">Eliminar</button>
-                            </form>
+                            <button onclick="eliminar({{ $item }})" class="btn btn-sm btn-danger">Eliminar</button>
                         </td>
                         <td>
                             <form action="{{ route('user-status', $item->id) }}" method="post">

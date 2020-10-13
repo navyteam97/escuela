@@ -30,7 +30,6 @@
         <div class="row">
             <div class="col-md-6">
                 @include('pages.administracion.user.create')
-                @include('pages.administracion.user.edit')
             </div>
             <div class="col-md-6">
                 @include('pages.administracion.user.warning')
@@ -41,6 +40,48 @@
         </div>
     </div>
 </section>
+
+@include('pages.administracion.user.edit-modal')
+
+
+
+<div class="modal-dialog fade" role="document" id="myModal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLiveLabel">
+                <font style="vertical-align: inherit;">
+                    <font style="vertical-align: inherit;">Título modal</font>
+                </font>
+            </h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">
+                    <font style="vertical-align: inherit;">
+                        <font style="vertical-align: inherit;">×</font>
+                    </font>
+                </span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <p>
+                <font style="vertical-align: inherit;">
+                    <font style="vertical-align: inherit;">¡Woohoo, estás leyendo este texto en un modal!</font>
+                </font>
+            </p>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                <font style="vertical-align: inherit;">
+                    <font style="vertical-align: inherit;">Cerrar</font>
+                </font>
+            </button>
+            <button type="button" class="btn btn-primary">
+                <font style="vertical-align: inherit;">
+                    <font style="vertical-align: inherit;">Guardar cambios</font>
+                </font>
+            </button>
+        </div>
+    </div>
+</div>
 @endsection
 
 @section('script')
@@ -52,10 +93,8 @@
                 sLengthMenu: "Mostrar _MENU_ registros",
                 sZeroRecords: "No se encontraron resultados",
                 sEmptyTable: "Ningún dato disponible en esta tabla",
-                sInfo:
-                    "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
-                sInfoEmpty:
-                    "Mostrando registros del 0 al 0 de un total de 0 registros",
+                sInfo: "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+                sInfoEmpty: "Mostrando registros del 0 al 0 de un total de 0 registros",
                 sInfoFiltered: "(filtrado de un total de _MAX_ registros)",
                 sInfoPostFix: "",
                 sSearch: "Buscar:",
@@ -69,10 +108,8 @@
                     sPrevious: "Anterior"
                 },
                 oAria: {
-                    sSortAscending:
-                        ": Activar para ordenar la columna de manera ascendente",
-                    sSortDescending:
-                        ": Activar para ordenar la columna de manera descendente"
+                    sSortAscending: ": Activar para ordenar la columna de manera ascendente",
+                    sSortDescending: ": Activar para ordenar la columna de manera descendente"
                 },
                 buttons: {
                     copy: "Copiar",
@@ -81,28 +118,38 @@
             },
             responsive: "true",
             dom: "Bfrtilp",
-            buttons: ["print", "pdfHtml5", "copyHtml5", "excelHtml5", "csvHtml5"],
-            //buttons: ["print", "copyHtml5", "excelHtml5", "csvHtml5", "pdfHtml5"],
             select: true,
             scrollY: 450,
             columns: [
                 null,
                 null,
-                { searchable: false, orderable: false },
-                { searchable: false, orderable: false },
-                { searchable: false, orderable: false },
-                { searchable: false, orderable: false }
-            ], 
+                {
+                    searchable: false,
+                    orderable: false
+                },
+                {
+                    searchable: false,
+                    orderable: false
+                },
+                {
+                    searchable: false,
+                    orderable: false
+                },
+                {
+                    searchable: false,
+                    orderable: false
+                }
+            ],
         });
     });
 
-    function eliminar(objeto) {
-        alert(
-            "¿Esta seguro que desea eliminar este item?, por como esta configurado esto, se va a eliminar igual esto solo es un alert"
-        );
+    function edit(objeto) {
+        console.log(objeto);
+        $('#myModal').modal('show');
     }
 
-    function edit(objeto) {
+    function edit2(objeto) {
+
         console.log(objeto);
         var id = document.getElementById("id");
         let name = document.getElementById("name");
@@ -110,7 +157,67 @@
         id.value = objeto.id;
         name.value = objeto.name;
         email.value = objeto.email;
+
+        var form = $("#save-modify-form")[0];
+
+        // Vaciar el formulario del modal.
+        form.reset();
+
+        $("#operation").val("store"); //Indica es un alta
+        $("#modal-title").text("Nuevo");
+
+
+        $("#msgErrModal").hide();
+
+        //        $("#userModal").modal("show")
+
+        //   $("#myModal").modal("show")
+        //       // Cuando termina de mostrarse.
+        //       .on("shown.bs.modal", function(e) {
+        //       $("#name").select(); // Selecciona todo el texto del 1er campo.
+        //   });
+
+
     }
+
+
+    function eliminar(objeto) {
+
+        //Pide Confirmacion
+        Swal.fire({
+            title: 'Eliminar Usuario ' + objeto.name + ' ?',
+            text: "Esta Seguro de Eliminar Item !",
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonText: 'Cancelar',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Si, Eliminar!'
+        }).then((result) => {
+            if (result.value) {
+                $.ajax({
+                    dataType: "json",
+                    data: {
+                        id: objeto.id
+                    },
+                    url: 'user-borra',
+                    type: 'get',
+                    success: function(data) {
+                        console.log('Ok Recargar Tabla o elimirar Fila');
+                        //       $table.bootstrapTable('load', data.results);
+                        document.location.reload(); // Para que recargue y pida login
+                    },
+                    error: function(xhr, err) {
+                        if (xhr.readyState == 401) { // Si se desconecto
+                            document.location.reload(); // Para que recargue y pida login
+                        } else {
+                            msgerror(xhr.responseText);
+                        }
+                    } // Fin si hay error
+                }); // Fin llamado Ajax
+            } // Confirmo
+        }) // Fin Confirmación
+    } // Fin Borrar
 </script>
 
 @endsection
