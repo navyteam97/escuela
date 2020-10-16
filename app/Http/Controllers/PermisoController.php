@@ -14,7 +14,7 @@ class PermisoController extends Controller
      */
     public function index()
     {
-        //
+        return view('pages.administracion.permiso.index');
     }
 
     /**
@@ -24,15 +24,8 @@ class PermisoController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.permiso.administracion.create');
     }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         //
