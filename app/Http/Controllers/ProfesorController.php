@@ -188,7 +188,19 @@ class ProfesorController extends Controller
             'name'=>'2° C'],
         ];
 
-        return view("pages.app.profesor.index")->with('datos', $datos)->with('turnos', $turnos)->with('cursos', $cursos);
+            // objeto que trae los siclos lectivos anteriores al actual con alumnos y notas. 
+          $ciclos_lectivos = [
+              (object) ['id'=>'1',
+              'name'=>'2020'],
+              (object) ['id'=>'2',
+              'name'=>'2019'],
+              (object) ['id'=>'3',
+              'name'=>'2018'],
+              (object)['id'=>'4',
+              'name'=> '2017'],
+          ];
+
+        return view("pages.app.profesor.index")->with('datos', $datos)->with('turnos', $turnos)->with('cursos', $cursos)->with('ciclos_lectivos' , $ciclos_lectivos);
     }
 
     public function aula(){
