@@ -34,7 +34,7 @@
 
   <div class="row">
     @foreach($datos as $dato)
-    <div class="col md-4">
+    <div class="col-12 col-md-6 col-lg-6 col-xl-4">
       <div class="card" style="width: 20rem;">
         <img src="{{asset('images/math.jpg')}}" class="card-img-top" alt="..." style="height: 18rem">
         <div class="card-body">
