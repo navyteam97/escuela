@@ -13,14 +13,15 @@
             </a>
             <ul class="nav nav-treeview">
                 <li class="nav-item">
-                    <a href="{{route('permiso.index')}}"
-                        class="nav-link {{ request()->is('permisos*') ? 'active' : '' }}">
+                    <a href="{{route('permiso.index')}}" 
+                        class="nav-link {{ request()->is('permiso*') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-user-edit"></i>
                         <p>Permisos</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{route('rol.index')}}" class="nav-link {{ request()->is('rol*') ? 'active' : '' }}">
+                    <a href="{{route('rol.index')}}" 
+                    class="nav-link {{ request()->is('rol*') ? 'active' : '' }}">
                         <i class="nav-icon fab fa-critical-role"></i>
                         <p>Roles</p>
                     </a>
